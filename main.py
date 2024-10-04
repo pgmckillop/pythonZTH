@@ -22,6 +22,7 @@ def main_menu():
     print('6) Intermediate: Highest Entered Number')
     print('7) Intermediate: Even number count')
     print('8) Advanced: Powers Function')
+    print('9) Advanced: Powers to max entered number')
     print('99) Exit the program')
     # return the user's choice
     choice = int(input("\n  Enter a menu number: "))
@@ -362,6 +363,40 @@ def menu_option_8():
     print(f"The result of {base} to the power of {exponent} is: {power(base, exponent)}")
 
 
+
+"""
+Menu_option_9 - Advanced: Powers to max entered number
+This limits the exponent value to integers under 10
+Note: There is no error handling here to keep the code clearer
+"""
+
+
+def powers_range(base, exponent):
+    # Validate input types and the value of the exponent
+    if not isinstance(base, int) or not isinstance(exponent, int):
+        raise ValueError("Both base and exponent must be integers.")
+    if exponent > 9:
+        raise ValueError("Exponent must be 9 or less.")
+
+    # Iterate over the range from 1 to the exponent inclusive
+    for power in range(1, exponent + 1):
+        result = base ** power
+        print(f"{base} raised to the power of {power} is: {result}")
+
+
+def menu_option_9():
+    print(" ")
+    print("You have selected the Advanced: Powers to max entered number")
+    print("The power you want to raise to must be less than 10")
+    print(" ")
+    # Get the base and exponent from the user
+    base = int(input("Enter the base number: "))
+    exponent = int(input("Enter the exponent. It must be 9 or less: "))
+    # Call the power function and print the result
+    print(f"The results of {base} to the power of 1 to {exponent} are: {powers_range(base, exponent)}")
+
+
+
 """
 This is the application's menu implementation. It is called
 right at the top of this file, and runs when the program launches.
@@ -374,7 +409,7 @@ It is set up to run until the user enters 99 to exit the structure.
 # Display menu when application launches
 x = main_menu()
 
-while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x == 8 or x == 99:
+while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x == 8 or x == 9 or x == 99:
     if x == 1:
         print(" ")
         print("You have selected the Beginner: Hello basic")
@@ -407,6 +442,10 @@ while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x ==
         print(" ")
         print("You have selected the Advanced: Powers Function")
         menu_option_8()
+    elif x == 9:
+        print(" ")
+        print("You have selected the Advanced: Powers to max entered number")
+        menu_option_9()
     elif x == 99:
         print(" ")
         print("You have selected to Exit the program")
