@@ -19,6 +19,7 @@ def main_menu():
     print('3) Intermediate: Numbers Value Check')
     print('4) Intermediate: Numbers Range Check')
     print('5) Intermediate: Average of 3 Numbers')
+    print('6) Intermediate: Highest Entered Number')
     print('99) Exit the program')
     # return the user's choice
     choice = int(input("\n  Enter a menu number: "))
@@ -240,6 +241,49 @@ Develop the function further to only
 permit a maximum of 3 numbers to be entered.
 """
 
+"""
+Menu_option_6 - Intermediate: Highest number entered
+Note: We could have used a tracking variable to record the current highest value
+as the user enters ach number, 
+but Python has a useful max() method that can be used with an array structure.
+"""
+
+
+def menu_option_6():
+    # set up an empty list to store the numbers entered
+    numbers_entered = []
+    print("You are going to be asked to enter 3 integer numbers. Enter them at the prompt.")
+    print(" ")
+    num1 = input("Enter the first number: ")
+    while not is_integer_and_valid(num1):
+        print("Please enter an integer value")
+        num1 = input("Enter the first number: ")
+    numbers_entered.append(num1)
+    num2 = input("Enter the second number: ")
+    while not is_integer_and_valid(num2):
+        print("Please enter an integer value")
+        num2 = input("Enter the second number: ")
+    numbers_entered.append(num2)
+    num3 = input("Enter the third number: ")
+    while not is_integer_and_valid(num3):
+        print("Please enter an integer value")
+        num3 = input("Enter the third number: ")
+    numbers_entered.append(num3)
+    print(" ")
+    print("The numbers you entered are: ", numbers_entered)
+    # We can use a built-in method that works for Python lists to find the highest number
+    print("The highest number entered is: ", max(numbers_entered))
+    #
+    # this code has a bug. Can you resolve it?
+    #
+
+"""
+-- INDEPENDENT EXTENSION TASK
+-- Menu option 6 Extension Task
+--
+Change the way the function works to return
+the lowest number entered using a for iteration loop.
+"""
 
 """
 This is the application's menu implementation. It is called
@@ -253,7 +297,7 @@ It is set up to run until the user enters 99 to exit the structure.
 # Display menu when application launches
 x = main_menu()
 
-while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 99:
+while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 99:
     if x == 1:
         print(" ")
         print("You have selected the Beginner: Hello basic")
@@ -274,6 +318,10 @@ while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 99:
         print(" ")
         print("You have selected the Intermediate: Average of 3 Numbers")
         menu_option_5()
+    elif x == 6:
+        print(" ")
+        print("You have selected the Intermediate: Highest number entered")
+        menu_option_6()
     elif x == 99:
         print(" ")
         print("You have selected to Exit the program")
