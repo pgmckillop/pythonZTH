@@ -20,6 +20,7 @@ def main_menu():
     print('4) Intermediate: Numbers Range Check')
     print('5) Intermediate: Average of 3 Numbers')
     print('6) Intermediate: Highest Entered Number')
+    print('7) Intermediate: Even number count')
     print('99) Exit the program')
     # return the user's choice
     choice = int(input("\n  Enter a menu number: "))
@@ -286,6 +287,55 @@ the lowest number entered using a for iteration loop.
 """
 
 """
+Menu_option_7 - Intermediate: Even number count
+Good demonstration of using while loops.
+Note: the check is for false using the 'not' qualifier.
+"""
+
+
+def menu_option_7():
+    # set up an empty list to store the numbers entered
+    numbers_entered = []
+    print("You are going to be asked to enter 3 integer numbers. Enter them at the prompt.")
+    print(" ")
+    num1 = input("Enter the first number: ")
+    while not is_integer_and_valid(num1):
+        print("Please enter an integer value")
+        num1 = input("Enter the first number: ")
+    numbers_entered.append(num1)
+    num2 = input("Enter the second number: ")
+    while not is_integer_and_valid(num2):
+        print("Please enter an integer value")
+        num2 = input("Enter the second number: ")
+    numbers_entered.append(num2)
+    num3 = input("Enter the third number: ")
+    while not is_integer_and_valid(num3):
+        print("Please enter an integer value")
+        num3 = input("Enter the third number: ")
+    numbers_entered.append(num3)
+    print(" ")
+    print("The numbers you entered are: ", numbers_entered)
+    # We can go through the list and count the even numbers
+    even_count = 0
+
+    for number in numbers_entered:
+        if int(number) % 2 == 0:
+            even_count += 1
+    print("The number of even numbers entered is: ", even_count)
+    # A different way to print the result
+    print(f"{even_count} even numbers were entered.")
+
+"""
+-- INDEPENDENT EXTENSION TASK
+-- Menu option 7 Extension Task
+--
+Develop the function further to make sure that
+at least 5 numbers have been entered.
+"""
+
+
+
+"""
 This is the application's menu implementation. It is called
 right at the top of this file, and runs when the program launches.
 It is set up to run until the user enters 99 to exit the structure.
@@ -297,7 +347,7 @@ It is set up to run until the user enters 99 to exit the structure.
 # Display menu when application launches
 x = main_menu()
 
-while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 99:
+while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x == 99:
     if x == 1:
         print(" ")
         print("You have selected the Beginner: Hello basic")
@@ -322,6 +372,10 @@ while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 99:
         print(" ")
         print("You have selected the Intermediate: Highest number entered")
         menu_option_6()
+    elif x == 7:
+        print(" ")
+        print("You have selected the Intermediate: Even number count")
+        menu_option_7()
     elif x == 99:
         print(" ")
         print("You have selected to Exit the program")

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6f84548-3110-4f0a-8e7f-689fcac47b4d" name="Changes" comment="05 Menu Option 5" />
+    <list default="true" id="d6f84548-3110-4f0a-8e7f-689fcac47b4d" name="Changes" comment="06 Menu Option 6" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="05-Menu-Option-5" />
+        <entry key="$PROJECT_DIR$" value="06-Menu-Option-6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +43,7 @@
   "keyToString": {
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "06-Menu-Option-6"
+    "git-widget-placeholder": "07-Menu-Option-7"
   }
 }]]></component>
   <component name="RunManager">
@@ -134,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728048476062</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="06 Menu Option 6">
+      <option name="closed" value="true" />
+      <created>1728048959827</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728048959827</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +175,7 @@
     <MESSAGE value="03 Menu Option 3" />
     <MESSAGE value="04 Menu Option 4" />
     <MESSAGE value="05 Menu Option 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="05 Menu Option 5" />
+    <MESSAGE value="06 Menu Option 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="06 Menu Option 6" />
   </component>
 </project>
