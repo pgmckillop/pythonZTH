@@ -21,6 +21,7 @@ def main_menu():
     print('5) Intermediate: Average of 3 Numbers')
     print('6) Intermediate: Highest Entered Number')
     print('7) Intermediate: Even number count')
+    print('8) Advanced: Powers Function')
     print('99) Exit the program')
     # return the user's choice
     choice = int(input("\n  Enter a menu number: "))
@@ -334,6 +335,32 @@ at least 5 numbers have been entered.
 """
 
 
+"""
+Menu_option_8 - Advanced: Powers function
+The user enters the base and the exponent and the program returns the result
+"""
+
+
+# Function signature
+def power(base, exponent):
+    # Validate input types - they must be integers
+    if not isinstance(base, int) or not isinstance(exponent, int):
+        raise ValueError("Both base and exponent must be integers.")
+
+    return base ** exponent
+
+
+# Menu function
+def menu_option_8():
+    print(" ")
+    print("You have selected the Advanced: Powers Function")
+    print(" ")
+    # Get the base and exponent from the user
+    base = int(input("Enter the base number: "))
+    exponent = int(input("Enter the exponent: "))
+    # Call the power function and print the result
+    print(f"The result of {base} to the power of {exponent} is: {power(base, exponent)}")
+
 
 """
 This is the application's menu implementation. It is called
@@ -347,7 +374,7 @@ It is set up to run until the user enters 99 to exit the structure.
 # Display menu when application launches
 x = main_menu()
 
-while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x == 99:
+while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x == 8 or x == 99:
     if x == 1:
         print(" ")
         print("You have selected the Beginner: Hello basic")
@@ -376,6 +403,10 @@ while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x ==
         print(" ")
         print("You have selected the Intermediate: Even number count")
         menu_option_7()
+    elif x == 8:
+        print(" ")
+        print("You have selected the Advanced: Powers Function")
+        menu_option_8()
     elif x == 99:
         print(" ")
         print("You have selected to Exit the program")
