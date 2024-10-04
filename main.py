@@ -18,6 +18,7 @@ def main_menu():
     print('2) Beginner: Numbers Basic')
     print('3) Intermediate: Numbers Value Check')
     print('4) Intermediate: Numbers Range Check')
+    print('5) Intermediate: Average of 3 Numbers')
     print('99) Exit the program')
     # return the user's choice
     choice = int(input("\n  Enter a menu number: "))
@@ -190,6 +191,55 @@ def menu_option_4():
 Develop the function further to check that
 the number entered is between a lower AND upper value.
 """
+"""
+Menu Option 5. Intermediate: Average of 3 Numbers
+The numbers_total variable is a tracking variable that will
+be an updated total with each number entered by the user.
+"""
+
+
+# We can reuse the functions we created for menu-option-4
+def menu_option_5():
+    # set up an empty list to store the numbers entered
+    numbers_entered = []
+    # set up a variable to store the total of the numbers entered
+    numbers_total = 0
+
+    print("You are going to be asked to enter 3 integer numbers. Enter them at the prompt.")
+    print("Each number must be less than 20")
+    print(" ")
+    num1 = input("Enter the first number: ")
+    while not is_integer_and_valid(num1):
+        print("Please enter an integer value")
+        num1 = input("Enter the first number: ")
+    numbers_entered.append(num1)
+    numbers_total += int(num1)
+    num2 = input("Enter the second number: ")
+    while not is_integer_and_valid(num2):
+        print("Please enter an integer value")
+        num2 = input("Enter the second number: ")
+    numbers_entered.append(num2)
+    numbers_total += int(num2)
+    num3 = input("Enter the third number: ")
+    while not is_integer_and_valid(num3):
+        print("Please enter an integer value")
+        num3 = input("Enter the third number: ")
+    numbers_entered.append(num3)
+    numbers_total += int(num3)
+    print(" ")
+    print("The numbers you entered are: ", numbers_entered)
+    print("The average of the numbers entered is: ", numbers_total / 3)
+    # print("The average of the numbers entered is: ", sum(numbers_entered) / len(numbers_entered))
+
+
+"""
+-- INDEPENDENT EXTENSION TASK
+-- Menu option 5 Extension Task
+--
+Develop the function further to only
+permit a maximum of 3 numbers to be entered.
+"""
+
 
 """
 This is the application's menu implementation. It is called
@@ -203,7 +253,7 @@ It is set up to run until the user enters 99 to exit the structure.
 # Display menu when application launches
 x = main_menu()
 
-while x == 1 or x == 2 or x == 3 or x == 4 or x == 99:
+while x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 99:
     if x == 1:
         print(" ")
         print("You have selected the Beginner: Hello basic")
@@ -220,6 +270,10 @@ while x == 1 or x == 2 or x == 3 or x == 4 or x == 99:
         print(" ")
         print("You have selected the Intermediate: Numbers Range Check")
         menu_option_4()
+    elif x == 5:
+        print(" ")
+        print("You have selected the Intermediate: Average of 3 Numbers")
+        menu_option_5()
     elif x == 99:
         print(" ")
         print("You have selected to Exit the program")
