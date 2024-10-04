@@ -17,6 +17,7 @@ def main_menu():
     print('1) Beginner: Hello basic')
     print('2) Beginner: Numbers Basic')
     print('3) Intermediate: Numbers Value Check')
+    print('4) Intermediate: Numbers Range Check')
     print('99) Exit the program')
     # return the user's choice
     choice = int(input("\n  Enter a menu number: "))
@@ -124,6 +125,73 @@ the numbers entered in ascending order.
 """
 
 """
+Menu Option 4. Intermediate: Numbers range check
+This is an example of decomposition and modularisation. Each of the
+functions is called by other functions. This makes code testing and maintenance 
+easier. 
+There is use of condition branching with if .. else structures.
+The use of try: .. except: is an example of error handling. If we 'catch' the 
+exception, we can deal with it in code to avoid the program crashing.
+"""
+
+
+# First check if the number is less than 20
+def is_valid(num):
+    """Check if the number is less than 20."""
+    return num < 20
+
+
+# Combined function to check if the input is an integer and less than 12
+def is_integer_and_valid(user_input):
+    try:
+        # Attempt to convert the input to an integer
+        converted_number = int(user_input)
+        # Check if the converted number is less than 12
+        if is_valid(converted_number):
+            return True  # Return True if the number is also less than 12
+        else:
+            print("The number must be less than 20, try again")
+            return False  # Return False if the number is 12 or greater
+    except ValueError:
+        # A ValueError occurs if the conversion fails
+        print("The number entered is not an integer, try again")
+        return False  # Return False if the input is not an integer
+
+
+# Bringing it together in the menu option
+def menu_option_4():
+    # set up an empty list to store the numbers entered
+    numbers_entered = []
+    print("You are going to be asked to enter 3 integer numbers. Enter them at the prompt.")
+    print("Each number must be less than 20")
+    print(" ")
+    num1 = input("Enter the first number: ")
+    while not is_integer_and_valid(num1):
+        print("Please enter an integer value")
+        num1 = input("Enter the first number: ")
+    numbers_entered.append(num1)
+    num2 = input("Enter the second number: ")
+    while not is_integer_and_valid(num2):
+        print("Please enter an integer value")
+        num2 = input("Enter the second number: ")
+    numbers_entered.append(num2)
+    num3 = input("Enter the third number: ")
+    while not is_integer_and_valid(num3):
+        print("Please enter an integer value")
+        num3 = input("Enter the third number: ")
+    numbers_entered.append(num3)
+    print(" ")
+    print("The numbers you entered are: ", numbers_entered)
+
+"""
+-- INDEPENDENT EXTENSION TASK
+-- Menu option 4 Extension Task
+--
+Develop the function further to check that
+the number entered is between a lower AND upper value.
+"""
+
+"""
 This is the application's menu implementation. It is called
 right at the top of this file, and runs when the program launches.
 It is set up to run until the user enters 99 to exit the structure.
@@ -135,7 +203,7 @@ It is set up to run until the user enters 99 to exit the structure.
 # Display menu when application launches
 x = main_menu()
 
-while x == 1 or x == 2 or x == 3 or x == 99:
+while x == 1 or x == 2 or x == 3 or x == 4 or x == 99:
     if x == 1:
         print(" ")
         print("You have selected the Beginner: Hello basic")
@@ -148,6 +216,10 @@ while x == 1 or x == 2 or x == 3 or x == 99:
         print(" ")
         print("You have selected the Intermediate: Numbers Value Check")
         menu_option_3()
+    elif x == 4:
+        print(" ")
+        print("You have selected the Intermediate: Numbers Range Check")
+        menu_option_4()
     elif x == 99:
         print(" ")
         print("You have selected to Exit the program")
